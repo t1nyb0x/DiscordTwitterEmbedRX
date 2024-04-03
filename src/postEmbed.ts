@@ -1,8 +1,8 @@
 import { EmbedBuilder } from "discord.js";
-import { Vxtwitter } from "./vxtwitter/vxtwitter";
+import { VxTwitter } from "./vxtwitter/vxtwitter";
 
 export class PostEmbed {
-  createEmbed(postInfo: Vxtwitter): EmbedBuilder {
+  createEmbed(postInfo: VxTwitter): EmbedBuilder {
     const embed = new EmbedBuilder()
       .setAuthor({
         name: postInfo.user_name,
@@ -19,7 +19,7 @@ export class PostEmbed {
     return embed;
   }
 
-  createMultiImageEmbed(postInfo: Vxtwitter): EmbedBuilder[] {
+  createMultiImageEmbed(postInfo: VxTwitter): EmbedBuilder[] {
     const embeds: EmbedBuilder[] = [];
     postInfo.mediaURLs.map((mediaURL) => {
       const embed = new EmbedBuilder()
